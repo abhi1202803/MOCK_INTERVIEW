@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { vapi } from "@/lib/vapi.sdk";
 import { interviewer } from "@/constants";
 import { createFeedback } from "@/lib/actions/general.action";
+import { assetPath } from "@/lib/assets";
 
 enum CallStatus {
   INACTIVE = "INACTIVE",
@@ -152,7 +153,7 @@ const Agent = ({
         <div className="card-interviewer">
           <div className="avatar">
             <Image
-              src="/ai-avatar.png"
+              src={assetPath("/ai-avatar.png")}
               alt="profile-image"
               width={65}
               height={54}
@@ -167,7 +168,7 @@ const Agent = ({
         <div className="card-border">
           <div className="card-content">
             <Image
-              src="/abhishek-bhardwaj.png"
+              src={assetPath("/abhishek-bhardwaj.png")}
               alt="profile-image"
               width={539}
               height={539}

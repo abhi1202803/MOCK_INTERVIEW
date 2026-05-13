@@ -11,6 +11,7 @@ import {
   demoUser,
   getDemoInterview,
 } from "@/lib/demo-data";
+import { assetPath } from "@/lib/assets";
 
 export const generateStaticParams = () =>
   demoInterviews.map((interview) => ({
@@ -28,7 +29,7 @@ const InterviewDetails = async ({ params }: RouteParams) => {
         <div className="flex flex-row gap-4 items-center max-sm:flex-col">
           <div className="flex flex-row gap-4 items-center">
             <Image
-              src={getRandomInterviewCover()}
+              src={assetPath(getRandomInterviewCover())}
               alt="cover-image"
               width={40}
               height={40}
@@ -50,7 +51,7 @@ const InterviewDetails = async ({ params }: RouteParams) => {
           <div className="avatar">
             <span className="animate-speak" />
             <Image
-              src="/ai-avatar.png"
+              src={assetPath("/ai-avatar.png")}
               alt="AI interviewer"
               width={65}
               height={54}
@@ -63,7 +64,7 @@ const InterviewDetails = async ({ params }: RouteParams) => {
         <div className="card-border">
           <div className="card-content">
             <Image
-              src="/abhishek-bhardwaj.png"
+              src={assetPath("/abhishek-bhardwaj.png")}
               alt={demoUser.name}
               width={120}
               height={120}

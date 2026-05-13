@@ -7,6 +7,7 @@ import DisplayTechIcons from "./DisplayTechIcons";
 
 import { cn } from "@/lib/utils";
 import { demoFeedback } from "@/lib/demo-data";
+import { assetPath } from "@/lib/assets";
 
 const InterviewCard = async ({
   interviewId,
@@ -77,7 +78,7 @@ const InterviewCard = async ({
           <div className="flex flex-row gap-5 mt-3">
             <div className="flex flex-row gap-2">
               <Image
-                src="/calendar.svg"
+                src={assetPath("/calendar.svg")}
                 width={22}
                 height={22}
                 alt="calendar"
@@ -86,7 +87,7 @@ const InterviewCard = async ({
             </div>
 
             <div className="flex flex-row gap-2 items-center">
-              <Image src="/star.svg" width={22} height={22} alt="star" />
+              <Image src={assetPath("/star.svg")} width={22} height={22} alt="star" />
               <p>{feedback?.totalScore || "---"}/100</p>
             </div>
           </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { demoFeedback, demoInterviews, getDemoInterview } from "@/lib/demo-data";
+import { assetPath } from "@/lib/assets";
 
 export const generateStaticParams = () =>
   demoInterviews.map((interview) => ({
@@ -28,7 +29,7 @@ const Feedback = async ({ params }: RouteParams) => {
         <div className="flex flex-row gap-5">
           {/* Overall Impression */}
           <div className="flex flex-row gap-2 items-center">
-            <Image src="/star.svg" width={22} height={22} alt="star" />
+            <Image src={assetPath("/star.svg")} width={22} height={22} alt="star" />
             <p>
               Overall Impression:{" "}
               <span className="text-primary-200 font-bold">
@@ -40,7 +41,7 @@ const Feedback = async ({ params }: RouteParams) => {
 
           {/* Date */}
           <div className="flex flex-row gap-2">
-            <Image src="/calendar.svg" width={22} height={22} alt="calendar" />
+            <Image src={assetPath("/calendar.svg")} width={22} height={22} alt="calendar" />
             <p>
               {feedback?.createdAt
                 ? dayjs(feedback.createdAt).format("MMM D, YYYY h:mm A")

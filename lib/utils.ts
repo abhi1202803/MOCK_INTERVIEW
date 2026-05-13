@@ -1,6 +1,7 @@
 import { interviewCovers, mappings } from "@/constants";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { assetPath } from "@/lib/assets";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -16,23 +17,23 @@ const normalizeTechName = (tech: string) => {
 };
 
 const techIconMap: Record<string, string> = {
-  react: "/tech-icons/react.svg",
-  typescript: "/tech-icons/typescript.svg",
-  nextjs: "/tech-icons/nextjs.svg",
-  nodejs: "/tech-icons/nodejs.svg",
-  mongodb: "/tech-icons/mongodb.svg",
-  postgresql: "/tech-icons/postgresql.svg",
-  docker: "/tech-icons/docker.svg",
-  python: "/tech-icons/python.svg",
-  figma: "/tech-icons/figma.svg",
-  jira: "/tech-icons/jira.svg",
-  mysql: "/tech-icons/mysql.svg",
-  sql: "/tech-icons/mysql.svg",
-  javascript: "/tech-icons/javascript.svg",
-  tailwindcss: "/tech-icons/tailwindcss.svg",
-  express: "/tech-icons/express.svg",
-  tableau: "/tech-icons/tableau.svg",
-  powerbi: "/tech-icons/powerbi.svg",
+  react: assetPath("/tech-icons/react.svg"),
+  typescript: assetPath("/tech-icons/typescript.svg"),
+  nextjs: assetPath("/tech-icons/nextjs.svg"),
+  nodejs: assetPath("/tech-icons/nodejs.svg"),
+  mongodb: assetPath("/tech-icons/mongodb.svg"),
+  postgresql: assetPath("/tech-icons/postgresql.svg"),
+  docker: assetPath("/tech-icons/docker.svg"),
+  python: assetPath("/tech-icons/python.svg"),
+  figma: assetPath("/tech-icons/figma.svg"),
+  jira: assetPath("/tech-icons/jira.svg"),
+  mysql: assetPath("/tech-icons/mysql.svg"),
+  sql: assetPath("/tech-icons/mysql.svg"),
+  javascript: assetPath("/tech-icons/javascript.svg"),
+  tailwindcss: assetPath("/tech-icons/tailwindcss.svg"),
+  express: assetPath("/tech-icons/express.svg"),
+  tableau: assetPath("/tech-icons/tableau.svg"),
+  powerbi: assetPath("/tech-icons/powerbi.svg"),
 };
 
 export const getTechLogos = async (techArray: string[]) => {
@@ -41,7 +42,7 @@ export const getTechLogos = async (techArray: string[]) => {
 
     return {
       tech,
-      url: techIconMap[normalized] ?? "/tech.svg",
+      url: techIconMap[normalized] ?? assetPath("/tech.svg"),
     };
   });
 };

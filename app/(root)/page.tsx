@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import InterviewCard from "@/components/InterviewCard";
 import { demoInterviews, demoUser } from "@/lib/demo-data";
+import { assetPath } from "@/lib/assets";
 
 async function Home() {
   const userInterviews = demoInterviews.slice(0, 1);
@@ -48,7 +49,7 @@ async function Home() {
         </div>
 
         <Image
-          src="/robot.png"
+          src={assetPath("/robot.png")}
           alt="robo-dude"
           width={400}
           height={400}

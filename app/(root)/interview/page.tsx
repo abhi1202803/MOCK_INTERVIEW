@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { demoUser } from "@/lib/demo-data";
+import { assetPath } from "@/lib/assets";
 
 const Page = async () => {
   return (
@@ -20,7 +21,7 @@ const Page = async () => {
         <div className="card-interviewer">
           <div className="avatar">
             <Image
-              src="/ai-avatar.png"
+              src={assetPath("/ai-avatar.png")}
               alt="AI interviewer"
               width={65}
               height={54}
@@ -33,7 +34,7 @@ const Page = async () => {
         <div className="card-border">
           <div className="card-content">
             <Image
-              src="/abhishek-bhardwaj.png"
+              src={assetPath("/abhishek-bhardwaj.png")}
               alt={demoUser.name}
               width={120}
               height={120}
