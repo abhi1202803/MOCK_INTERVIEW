@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath: "/MOCK_INTERVIEW",
   assetPrefix: "/MOCK_INTERVIEW/",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
